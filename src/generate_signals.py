@@ -4,8 +4,7 @@ Two classes differ in BOTH a time-domain pattern (a localized waveform
 template appearing at a class-dependent time window) and a frequency-domain
 pattern (a class-dependent dominant oscillation band) -- deliberately, so a
 model using only one domain cannot solve the full task. Amplitudes are kept
-close to the background noise level so the task is not trivially easy (see
-README "honest finding" for the bug this fixes).
+close to the background noise level so the task is not trivially easy.
 
 Shape mirrors real EEG: multi-channel, fixed sample rate, short epochs.
 """

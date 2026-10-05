@@ -10,7 +10,7 @@ through training and then declines even as train loss keeps dropping
 chance by epoch 150+ on the time-domain-only ablation task). This is
 ordinary, expected overfitting behavior for a small model on a small,
 noisy dataset -- early stopping on a held-out validation set is the
-standard, honest fix, not a way to cherry-pick a lucky epoch.
+standard fix, not a way to cherry-pick a lucky epoch.
 """
 from __future__ import annotations
 
@@ -117,8 +117,8 @@ def train_model_with_restarts(model_factory, X_train: torch.Tensor, y_train: tor
     validation set says is best, is the standard way to handle a seed-
     sensitive optimization landscape -- it is NOT the same thing as tuning
     hyperparameters against the test set (the test set is never touched
-    here; only validation accuracy is used to pick a restart), and it's
-    disclosed here rather than silently reporting only the best-case run.
+    here; only validation accuracy is used to pick a restart), and the
+    restart count is reported alongside the best-case run.
     """
     best_model, best_val_acc, best_history = None, -1.0, None
     for seed in range(n_restarts):

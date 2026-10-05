@@ -109,7 +109,7 @@ class SelectiveHead(nn.Module):
         the sense that some random initializations converge to a poor local
         optimum) is handled at the training level instead, via multiple
         random restarts picked by validation accuracy -- see
-        `train_model_with_restarts` in train.py. That is a more honest fix
+        `train_model_with_restarts` in train.py. That is a better fix
         than continuing to tune this calibration to chase a single metric.
         """
         self.time_scale = time_activations.abs().mean().clamp_min(1e-6).reshape(1)

@@ -11,7 +11,7 @@ most expensive:
    frequency-only ablated inputs are each capped at a computable ceiling
    (perfect on their own domain's samples, chance on the other's). The
    dual-domain model must beat that ceiling by actually using both domains
-   -- even a modest, honestly-reported margin is real evidence, and this
+   -- even a modest, clearly-reported margin is real evidence, and this
    test is calibrated to the margin actually observed during development
    rather than an unrealistic target (see README for the numbers and the
    substantial debugging that went into understanding why the margin is
@@ -29,7 +29,7 @@ from src.train import train_model_with_restarts, evaluate
 
 class TestSingleDomainDataAblation:
     def test_dual_model_finds_a_better_than_chance_solution_on_time_only_data(self):
-        """Honest, measured limitation, not an idealized target: on data
+        """Measured limitation, not an idealized target: on data
         where only the time domain is informative, this project's
         correlation-based time-concept mechanism is genuinely the weaker of
         the two branches (see README's extended discussion of the
@@ -38,7 +38,7 @@ class TestSingleDomainDataAblation:
         signal (the model CAN find real structure), even though any single
         run's held-out test accuracy is noisy and sometimes lands near
         chance -- which is exactly why train_model_with_restarts and
-        best-of-N selection exist, and why this is reported honestly here
+        best-of-N selection exist, and why this test asserts the best-of-N result
         rather than asserting a single-run test accuracy that isn't reliably
         met.
         """
@@ -82,7 +82,7 @@ class TestMixedCueAblation:
     the other) -- see test_single_domain_ablations_are_capped below, which
     checks that ceiling directly.
 
-    Honest finding, disclosed rather than tuned away (see README): the
+    Measured finding (see README): the
     margin by which the dual-domain model beats a single-domain ablation on
     this specific mixed-cue task is real but modest and somewhat run-to-run
     variable, NOT the clean "dual solves both halves near-perfectly" result

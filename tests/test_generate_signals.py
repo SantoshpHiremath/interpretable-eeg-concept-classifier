@@ -85,7 +85,7 @@ class TestOracleTaskDifficulty:
         """A matched filter using the TRUE template must beat chance by a
         wide margin (proving the injected pattern is real and detectable)
         but should not be a perfect/trivial separator (proving the noise
-        level is realistic, not decorative) -- this bounds the honest
+        level is realistic, not decorative) -- this bounds the
         difficulty of the time-domain task, referenced throughout the
         README's discussion of the time branch's real, measured ceiling.
         """

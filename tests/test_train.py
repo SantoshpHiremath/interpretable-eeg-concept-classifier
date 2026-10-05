@@ -55,7 +55,7 @@ class TestTrainModelWithRestarts:
         assert history["best_val_accuracy"] >= 0.5
 
     def test_restarts_never_touch_the_test_set(self):
-        """Documents the honest-practice guarantee: train_model_with_restarts
+        """Documents the no-leakage guarantee: train_model_with_restarts
         only receives train/val data -- it has no way to peek at test data,
         so picking the best restart by val accuracy cannot leak test
         information.

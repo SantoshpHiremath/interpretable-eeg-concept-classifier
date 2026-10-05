@@ -1,7 +1,6 @@
 """Local sequential architecture/hyperparameter sweep -- the shape of the
-systematic architecture evaluation the posting describes running on a SLURM
-cluster, implemented here as a sequential loop (no cluster available in this
-environment; see README).
+systematic architecture evaluation one would run as a cluster job array,
+implemented here as a sequential loop on a single machine.
 """
 from __future__ import annotations
 
